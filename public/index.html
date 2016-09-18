@@ -46,13 +46,26 @@ https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         ng-model="author"
       >
     </label>
-  </div>
+  <br>
   <button ng-click="BookService.addBook({title: title, author: author}); author=''; title=''">Add Book</button>
+  </div>
   <br>
   <b>Books:</b>
   <br>
+  <div>
+    <label> 
+      Find A Book:
+      <input 
+        type="search"
+        name="bookTitle"
+        ng-model="bookTitleFilterValue"
+        placeholder="Sherlock Holmes" 
+      >
+      {{ bookTitleFilterValue }}
+    </label>
+  </div>
   <ul class="value_of_books">
-    <li ng-repeat="book in BookService.books">
+    <li ng-repeat="book in BookService.books | filter: {title: bookTitleFilterValue}">
       <h4><i>{{ book.title }}</i></h4>
       <p>{{ book.author }}</p>   
     </li>
