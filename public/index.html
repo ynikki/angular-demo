@@ -18,19 +18,22 @@ https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <div>
     <h3>{{myFirstName}}</h3>
     <input type="text" ng-model="myModel">
-    <div>{{myModel}}</div>
-    <h2>{{mainCharacter}}</h2>
+    <div>{{ myModel }}</div>
+    <h2>{{ mainCharacter }}</h2>
   </div>
   <div class="value_of_character_version">
     <b>Character version:</b>
     <br>
-     {{characterVersion}}
+     {{ characterVersion }}
   </div>
-  <div class="value_ofbooks">
-    <b>Books:</b>
-    <br>
-    {{ books }}
-  </div>
-  <h4>{{APP_VERSION}}</h4>
+  <b>Books:</b>
+  <br>
+  <ul class="value_ofbooks">
+    <li ng-repeat="book in books">
+      <h4><i>{{ book.title }}</i></h4>
+      <p>{{ book.author }}</p>   
+    </li>
+  </ul>
+  <h4>{{ APP_VERSION }}</h4>
 </body>
 </html>
