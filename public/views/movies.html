@@ -1,0 +1,8 @@
+ <b>Movies:</b>
+  <br>
+  <ul class="value_of_movies">
+    <li ng-repeat="movie in movies | orderBy: '-year'">
+      <h4><i>{{ movie.title }}</i></h4>
+      <p>{{ movie.year }}</p>   
+    </li>
+  </ul>
