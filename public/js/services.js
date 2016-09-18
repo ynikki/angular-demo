@@ -29,3 +29,11 @@ BookService.prototype.getBooks = function () {
 BookService.prototype.getBook = function (id) {
   return this.books.find((book) => book.id === id);
 }
+
+BookService.prototype.addBook = function (bookData) {
+  const {author, title} = bookData;
+  this.books.unshift({
+    author,
+    title
+  })
+}

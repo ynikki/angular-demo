@@ -26,10 +26,31 @@ https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <br>
      {{ characterVersion }}
   </div>
+  <div class="addBook">
+    <h4>Add A Book</h4>
+    <label>Title
+      <input 
+        type="text" 
+        name="title" 
+        placeholder="Goosebumps" 
+        ng-model="title"
+      >
+    </label>
+    <label>Author
+      <input 
+        type="text" 
+        name="author" 
+        placeholder="R.L. Stein" 
+        ng-model="author"
+      >
+    </label>
+  </div>
+  <button ng-click="BookService.addBook({title: title, author: author})">Add Book</button>
+  <br>
   <b>Books:</b>
   <br>
   <ul class="value_ofbooks">
-    <li ng-repeat="book in books">
+    <li ng-repeat="book in BookService.books">
       <h4><i>{{ book.title }}</i></h4>
       <p>{{ book.author }}</p>   
     </li>
