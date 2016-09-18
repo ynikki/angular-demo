@@ -65,7 +65,7 @@ https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     </label>
   </div>
   <ul class="value_of_books">
-    <li ng-repeat="book in BookService.books | filter: {title: bookTitleFilterValue}">
+    <li ng-repeat="book in BookService.books | filter: {title: bookTitleFilterValue} | orderBy: 'title'">
       <h4><i>{{ book.title }}</i></h4>
       <p>{{ book.author }}</p>   
     </li>
@@ -73,7 +73,7 @@ https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <b>Movies:</b>
   <br>
   <ul class="value_of_movies">
-    <li ng-repeat="movie in movies | beforeYearFilter: 1983">
+    <li ng-repeat="movie in movies | orderBy: '-year'">
       <h4><i>{{ movie.title }}</i></h4>
       <p>{{ movie.year }}</p>   
     </li>
