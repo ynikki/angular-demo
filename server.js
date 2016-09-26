@@ -70,6 +70,10 @@ app.get('/api/movies', function (req, res) {
   res.json(movies);
 });
 
+app.use('/404', function (req, res) {
+  res.status(404).render('404');
+});
+
 const server = app.listen(PORT, function () {
   console.log('Now listening on PORT:' + PORT);
 });

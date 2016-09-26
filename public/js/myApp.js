@@ -28,6 +28,9 @@ angular.module('myApp', ['ngRoute'])
         .when('/other', {
           templateUrl: 'views/other.html',
           controller: 'myController'
+        })
+        .when('/404', {
+          templateUrl: 'views/404.html'
         });
     }
   ])
